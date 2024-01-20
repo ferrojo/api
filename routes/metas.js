@@ -74,7 +74,7 @@ router.get('/:id', function (req, res, next) {
 /* POST Crear una meta */
 router.post('/',
   body('detalles').isLength({ min: 5 }),
-  body('plazo').not().isEmpty(),
+  body('periodo').not().isEmpty(),
   function (req, res, next) {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
@@ -99,7 +99,7 @@ router.post('/',
 /* PUT Actualizar una meta */
 router.put('/:id',
 body('detalles').isLength({ min: 5 }),
-body('plazo').not().isEmpty(),
+body('periodo').not().isEmpty(),
 function (req, res, next) {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
